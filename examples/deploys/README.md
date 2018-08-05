@@ -12,7 +12,12 @@ docker-compose down --remove-orphans
 docker-compose up --build -d
 
 
-5. headers vs. no headers 
+5. routing with headers vs. no headers
 
 If we make a request to our service with no headers, we’ll get a response from service 1:
 curl localhost:8000/service/1
+
+or you can use headers to get service1a
+curl -H 'x-canary-version: service1a' localhost:8000/service/1
+
+yay!
